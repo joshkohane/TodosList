@@ -1,9 +1,10 @@
 # == Schema Information
 #
-# Table name: lists
+# Table name: comments
 #
 #  id         :bigint           not null, primary key
-#  title      :string           not null
+#  text       :text             not null
+#  task_id    :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

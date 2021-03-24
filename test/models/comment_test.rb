@@ -1,15 +1,16 @@
 # == Schema Information
 #
-# Table name: lists
+# Table name: comments
 #
 #  id         :bigint           not null, primary key
-#  title      :string           not null
+#  text       :text             not null
+#  task_id    :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 require 'test_helper'
 
-class ListTest < ActiveSupport::TestCase
+class CommentTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
