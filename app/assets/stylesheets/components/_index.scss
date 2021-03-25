@@ -1,4 +1,5 @@
 @import "../base/colors.scss";
+@import "base/fonts.scss";
 
 .app-wrapper {
     background-color: $blue;
@@ -12,4 +13,7 @@
 
 .app-header {
     font-size: 40px;
+    color: $off-black;
+    font-family: $logo;
+    letter-spacing: 1px;
 }

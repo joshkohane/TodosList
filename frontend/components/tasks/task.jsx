@@ -7,7 +7,6 @@ const Task = ({ task, ownProps, fetchOneTask}) => {
     useEffect(() => {
         fetchOneTask(parseInt(ownProps.match.params.taskId));
     }, [ownProps])
-    // debugger;
 
     function displayComments() {
         let comments = Object.values(task[0].comments).map((comment, idx) => {
@@ -26,7 +25,8 @@ const Task = ({ task, ownProps, fetchOneTask}) => {
                     {showComments ?
                         task[0].comments ? 
                             displayComments()
-                        : ""
+                        : 
+                            <h1>Add Some Comments!</h1>
                     : ""}
                 </div>
             
