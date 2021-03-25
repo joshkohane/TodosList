@@ -5,7 +5,7 @@ json.task do
 end
 
 json.comments do
-    @list.comments.each do |comment|
+    @task.comments.each do |comment|
         json.set! comment.id do
             json.extract! comment, :id, :text, :task_id
         end
