@@ -17,5 +17,8 @@
  //  SCSS Reset File
 @import "base/reset.scss";
 
+// Base Styles
+@import "base/colors.scss";
+
 // Component Styles
- @import "components/index.scss";
+ @import "components/*";

@@ -16,8 +16,8 @@ class Api::ListsController < ApplicationController
 
     def create
         @list = List.new(list_params)
-
-        if @list.save
+        
+        if @list.save!
             render :show
         else
             render json: @list.errors.full_messages, status: 401

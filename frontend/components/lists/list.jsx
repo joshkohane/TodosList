@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ListItem from './list_item';
 
 const List = ({ lists, fetchEveryList }) => {
     const [currLists, setCurrLists] = useState(lists)
@@ -9,9 +10,8 @@ const List = ({ lists, fetchEveryList }) => {
 
     return (
         <div>
-            HELLLLLOOOOOOOOOOO
             {lists.map((list, idx) => {
-                return <h1 key={idx} >{list.title}</h1>
+                return <ListItem list={list} tasks={list.tasks ? Object.values(list.tasks) : []} key={idx} />
             })}
         </div>
     )

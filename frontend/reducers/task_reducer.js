@@ -7,7 +7,7 @@ export default (oldState = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_TASK:
-            return Object.assign({}, newState, action.task.task);
+            return Object.assign({}, action.task.task);
         case DELETE_TASK:
             delete newState[action.task.task]
             return newState;

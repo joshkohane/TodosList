@@ -1,0 +1,15 @@
+@import "../base/colors.scss";
+
+.app-wrapper {
+    background-color: $blue;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.app-header {
+    font-size: 40px;
+}
