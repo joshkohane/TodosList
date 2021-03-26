@@ -16,7 +16,7 @@ export const deleteATask = (task) => ({
 export const fetchOneTask = (taskId) => dispatch => fetchTask(taskId)
     .then(task => dispatch(receiveTask(task)))
 
-export const addThisTask = (listId, task) => dispatch => addTask(listId, task)
+export const addThisTask = (task) => dispatch => addTask(task)
     .then(task => dispatch(receiveTask(task)))
 
 export const updateThisTask = (taskId, task) => dispatch => updateTask(taskId, task)

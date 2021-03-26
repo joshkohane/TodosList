@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import TaskItem from './task_item';
+import NewTask from './new_task';
 
-const ListItem = ({ list, tasks, updateList, handleDelete }) => {
+const ListItem = ({ list, tasks, updateList, handleDelete, addTask, updateTask, handleTask }) => {
     const [showTasks, setShowTasks] = useState(false);
     const [editTitleBtn, setEditTitleBtn] = useState(false);
     const [newTitle, setNewTitle] = useState(list.title);
+    const [showAddTask, setShowAddTask] = useState(false);
     const [showPopUp, setShowPopUp] = useState(false);
 
     function handleSubmit(e) {
@@ -16,6 +18,10 @@ const ListItem = ({ list, tasks, updateList, handleDelete }) => {
     function handleDeleteList() {
         handleDelete(list.id);
         setShowPopUp(false);
+    }
+
+    function handleAddTask(idx) {
+        handleTask()
     }
 
     return (
@@ -42,8 +48,20 @@ const ListItem = ({ list, tasks, updateList, handleDelete }) => {
                 <span className="delete-list-button" onClick={() => setShowPopUp(true)}>&#x2715;</span>
             </div>
             {showTasks ?
+                <div onClick={(e) => e.stopPropagation()}>
+                    {showAddTask ? 
+                        <div>
+                            <p onClick={() => setShowAddTask(false)} className="add-task-header">- Add Task</p>
+                            <NewTask addTask={addTask} listId={list.id} handleAddTask={handleAddTask} />
+                        </div>
+                    : 
+                        <p onClick={() => setShowAddTask(true)} className="add-task-header">+ Add Task</p>
+                    }
+                </div>
+            : ""}
+            {showTasks ?
                 tasks.map(((task, idx) => {
-                    return <TaskItem task={task} key={idx} />
+                    return <TaskItem task={task} key={idx} updateTask={updateTask} />
                 }))
             : ""}
             {showPopUp ?

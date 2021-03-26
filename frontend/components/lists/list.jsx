@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ListItem from './list_item';
 
-const List = ({ lists, fetchEveryList, addList, updateList, deleteList }) => {
-    const [currLists, setCurrLists] = useState(lists);
+const List = ({ lists, fetchEveryList, addList, updateList, deleteList, addTask, updateTask }) => {
     const [input, setInput] = useState('');
 
     useEffect(() => {
@@ -19,6 +18,10 @@ const List = ({ lists, fetchEveryList, addList, updateList, deleteList }) => {
 
     function handleDelete(idx) {
         deleteList(idx);
+        setTimeout(() => fetchEveryList(), 0)
+    }
+
+    function handleTask() {
         setTimeout(() => fetchEveryList(), 0)
     }
 
@@ -45,6 +48,9 @@ const List = ({ lists, fetchEveryList, addList, updateList, deleteList }) => {
                         key={idx} 
                         updateList={updateList}
                         handleDelete={handleDelete}
+                        addTask={addTask}
+                        updateTask={updateTask}
+                        handleTask={handleTask}
                         />
                 })
             :

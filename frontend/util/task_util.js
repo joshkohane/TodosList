@@ -4,11 +4,11 @@ export const fetchTask = (taskId) => (
     })
 )
 
-export const addTask = (listId, task) => (
+export const addTask = (task) => (
     $.ajax({
         url: `api/tasks`,
         method: 'POST',
-        data: { task: { list_id: listId, task } }
+        data: { task }
     })
 )
 

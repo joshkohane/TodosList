@@ -1,0 +1,74 @@
+@import "../base/colors.scss";
+@import "base/fonts.scss";
+
+.add-task-header {
+    padding: 5px;
+    font-family: $serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: $off-white;
+}
+
+.new-task-form {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    position: relative;
+}
+
+.new-task-label {
+    display: flex;
+    flex-direction: column;   
+    padding: 5px;
+    font-family: $serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: $off-white;
+}
+
+.new-task-input,
+.new-task-description {
+    background-color: $off-white;
+    border: 2px solid $off-black;
+    border-radius: 10px;
+    padding: 8px;
+    width: 100%;
+    font-family: $serif;
+    font-size: 16px;
+    color: $off-black;
+}
+
+.new-task-description {
+    height: 100px;
+    resize: none;
+    outline: none;
+    width: 240px;
+}
+
+.new-task-submit {
+    padding: 5px;
+    border: 2px solid $off-black;
+    border-radius: 10px;
+    background-color: $off-white;
+    color: $off-black;
+    font-family: $serif;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.3s;
+    width: 115px;
+    margin: 0 auto;
+    margin-top: 20px;
+    
+    &:hover {
+        box-shadow: 0px 0px 7px $off-black;
+    }
+}
+
+.error-msg {
+    position: absolute;
+    top: 304px;
+    right: 27px;
+    font-size: 9px;
+    color: $off-white;
+    font-family: $serif;
+}
