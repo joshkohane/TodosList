@@ -38,6 +38,7 @@ const NewTask = ({ addTask, listId, handleAddTask }) => {
                     <h2 className="new-task-label">Description</h2>
                     <textarea type="text"
                         className="new-task-description"
+                        maxLength="150"
                         placeholder="Add your description"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}

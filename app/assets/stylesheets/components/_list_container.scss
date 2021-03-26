@@ -69,11 +69,12 @@
 .list-item-title-input {
     color: $off-black;
     text-transform: uppercase;
-    width: 90%;
+    width: 93%;
     caret-color: $off-white;
     font-family: $sans-serif;
     font-weight: 700;
     letter-spacing: .5px;
+    border-bottom: 1px solid $off-black;
 }
 
 .update-title {
@@ -89,7 +90,7 @@
     }
 }
 
-.fa-check-square {
+.list-task-checkmark {
     color: $off-white;
     height: 12px;
     border-radius: 1px;

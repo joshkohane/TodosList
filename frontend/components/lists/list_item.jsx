@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import TaskItem from './task_item';
 import NewTask from './new_task';
 
-const ListItem = ({ list, tasks, updateList, handleDelete, addTask, updateTask, handleTask }) => {
+const ListItem = ({ list, tasks, updateList, handleDelete, deleteList, addTask, updateTask, handleTask }) => {
     const [showTasks, setShowTasks] = useState(false);
     const [editTitleBtn, setEditTitleBtn] = useState(false);
     const [newTitle, setNewTitle] = useState(list.title);
@@ -16,8 +16,9 @@ const ListItem = ({ list, tasks, updateList, handleDelete, addTask, updateTask, 
     }
 
     function handleDeleteList() {
-        handleDelete(list.id);
+        deleteList(list.id);
         setShowPopUp(false);
+        handleTask();
     }
 
     function handleAddTask() {
@@ -34,7 +35,7 @@ const ListItem = ({ list, tasks, updateList, handleDelete, addTask, updateTask, 
                         value={newTitle}
                         onChange={(e) => setNewTitle(e.target.value)}
                         className="list-item-title-input"
-                        maxLength="25"
+                        maxLength="20"
                     />
                     <i className="far fa-check-square update-title"
                         onClick={handleSubmit}

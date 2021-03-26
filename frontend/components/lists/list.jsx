@@ -16,13 +16,13 @@ const List = ({ lists, fetchEveryList, addList, updateList, deleteList, addTask,
         }
     }
 
-    function handleDelete(idx) {
-        deleteList(idx);
-        setTimeout(() => fetchEveryList(), 0)
-    }
+    // function handleDelete(idx) {
+    //     deleteList(idx);
+    //     handleTask();
+    // }
 
     function handleTask() {
-        setTimeout(() => fetchEveryList(), 0)
+        setTimeout(() => fetchEveryList(), 50)
     }
 
     return (
@@ -47,7 +47,8 @@ const List = ({ lists, fetchEveryList, addList, updateList, deleteList, addTask,
                         tasks={list.tasks ? Object.values(list.tasks) : []} 
                         key={idx} 
                         updateList={updateList}
-                        handleDelete={handleDelete}
+                        // handleDelete={handleDelete}
+                        deleteList={deleteList}
                         addTask={addTask}
                         updateTask={updateTask}
                         handleTask={handleTask}

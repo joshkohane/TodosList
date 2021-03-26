@@ -11,7 +11,7 @@ const TaskItem = ({ task, updateTask, handleAddTask }) => {
     return (
         <div className="list-task-item" onClick={(e) => e.stopPropagation()}>
             {task.status ?
-                <i className="far fa-check-square" onClick={handleUpdate}></i>
+                <i className="far fa-check-square list-task-checkmark" onClick={handleUpdate}></i>
             : 
                 <div className="task-check-not-done" onClick={handleUpdate}></div>
             }
