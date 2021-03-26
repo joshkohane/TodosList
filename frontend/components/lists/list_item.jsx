@@ -20,7 +20,7 @@ const ListItem = ({ list, tasks, updateList, handleDelete, addTask, updateTask, 
         setShowPopUp(false);
     }
 
-    function handleAddTask(idx) {
+    function handleAddTask() {
         handleTask()
     }
 
@@ -61,7 +61,7 @@ const ListItem = ({ list, tasks, updateList, handleDelete, addTask, updateTask, 
             : ""}
             {showTasks ?
                 tasks.map(((task, idx) => {
-                    return <TaskItem task={task} key={idx} updateTask={updateTask} />
+                    return <TaskItem task={task} key={idx} updateTask={updateTask} handleAddTask={handleAddTask} />
                 }))
             : ""}
             {showPopUp ?

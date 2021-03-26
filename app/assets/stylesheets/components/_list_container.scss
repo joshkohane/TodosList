@@ -120,15 +120,20 @@
     top: 23px;
 }
 
-.list-task-title {
+.list-task-title,
+.list-task-title-done {
     color: $yellow;
     text-decoration: none;
     padding-left: 8px;
     font-family: $serif;
+}
 
-    &:hover {
-        text-decoration: underline;
-    }
+.list-task-title:hover {
+    text-decoration: underline;
+}
+
+.list-task-title-done {
+    text-decoration: line-through;
 }
 
 .task-check-not-done {

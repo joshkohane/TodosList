@@ -16,7 +16,7 @@ export const updateTask = (taskId, task) => (
     $.ajax({
         url: `api/tasks/${taskId}`,
         method: 'PATCH',
-        data: { task: { task } }
+        data: { task }
     })
 )
 
