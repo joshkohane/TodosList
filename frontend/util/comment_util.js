@@ -1,8 +1,8 @@
-export const addComment = (taskId, text) => (
+export const addComment = (comment) => (
     $.ajax({
         url: `/api/comments`,
         method: 'POST',
-        data: { comment: { task_id: taskId, text } }
+        data: { comment }
     })
 )
 

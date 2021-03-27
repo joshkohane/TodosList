@@ -13,7 +13,7 @@ export const removeComment = (comment) => ({
     comment
 })
 
-export const addThisComment = (taskId, text) => dispatch => addComment(taskId, text)
+export const addThisComment = (comment) => dispatch => addComment(comment)
     .then(comment => dispatch(receiveComment(comment)))
 
 export const updateThisComment = (commentId, text) => dispatch => updateComment(commentId, text)
