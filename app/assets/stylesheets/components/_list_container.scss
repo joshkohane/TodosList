@@ -27,7 +27,7 @@
         display: block;
         position: absolute;
         right: 6px;
-        top: 4px;
+        top: 10px;
         font-size: 20px;
         color: $off-black;
         cursor: pointer;
@@ -51,11 +51,6 @@
         box-shadow: 0px 0px 7px $off-black;
         background-color: $dark-green;
     }
-}
-
-.list-task-item {
-    display: flex;
-    padding-top: 4px;
 }
 
 .list-item-title {
@@ -98,7 +93,8 @@
 }
 
 .delete-list-button,
-.update-button {
+.update-button,
+.delete-task-button {
     position: absolute;
     color: $off-black;
     transition: 0.3s;
@@ -108,6 +104,9 @@
     }
 }
 
+.delete-task-button {
+    display: none;
+}
 
 .update-button {
     right: 5px;
@@ -121,6 +120,20 @@
     top: 23px;
 }
 
+.list-task-item {
+    display: flex;
+    padding-top: 4px;
+    position: relative;
+
+    &:hover {
+        .delete-task-button {
+            display: block;
+            width: 14px;
+            right: -3px;
+            top: 9px;
+        }
+    }
+}
 .list-task-title,
 .list-task-title-done {
     color: $yellow;
@@ -144,3 +157,4 @@
     background-color: $off-white;
     margin-top: 6px;
 }
+

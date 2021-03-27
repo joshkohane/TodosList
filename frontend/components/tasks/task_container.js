@@ -1,6 +1,6 @@
 import Task from './task';
 import { connect } from 'react-redux';
-import { fetchOneTask } from '../../actions/task_actions';
+import { fetchOneTask, updateThisTask } from '../../actions/task_actions';
 
 const mapSTP = (state, ownProps) => ({
     task: Object.values(state.tasks),
@@ -8,7 +8,8 @@ const mapSTP = (state, ownProps) => ({
 })
 
 const mapDTP = dispatch => ({
-    fetchOneTask: (taskId) => dispatch(fetchOneTask(taskId))
+    fetchOneTask: (taskId) => dispatch(fetchOneTask(taskId)),
+    updateTask: (taskId, task) => dispatch(updateThisTask(taskId, task)),
 })
 
 export default connect(mapSTP, mapDTP)(Task);

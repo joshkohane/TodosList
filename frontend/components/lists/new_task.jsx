@@ -5,16 +5,20 @@ const NewTask = ({ addTask, listId, handleAddTask }) => {
     const [description, setDescription] = useState('');
     const [error, setError] = useState('');
 
-    function handleCreate() {
-        if (title.length >= 3 && description.length >= 3) {
-            const task = {list_id: listId, title: title, description: description};
-            addTask(task);
-            setTitle('');
-            setDescription('');
-            handleAddTask();
-            setError('')
-        } else {
+    function handleCreate(e) {
+        e.preventDefault();
+        console.log(description.length)
+        if (title.length < 3 || description.length < 3) {
             setError('Title and Description must be longer than 3 characters');
+        } else {
+            const task = {list_id: listId, title: title, description: description};
+            addTask(task)
+                .then(
+                    setTitle(''),
+                    setDescription(''),
+                    handleAddTask(),
+                    setError('')
+                )
         }
     }
 

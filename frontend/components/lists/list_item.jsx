@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import TaskItem from './task_item';
 import NewTask from './new_task';
 
-const ListItem = ({ list, tasks, updateList, handleDelete, deleteList, addTask, updateTask, handleTask }) => {
+const ListItem = ({ list, tasks, updateList, deleteList, addTask, updateTask, deleteTask, handleTask }) => {
     const [showTasks, setShowTasks] = useState(false);
     const [editTitleBtn, setEditTitleBtn] = useState(false);
     const [newTitle, setNewTitle] = useState(list.title);
@@ -16,9 +16,11 @@ const ListItem = ({ list, tasks, updateList, handleDelete, deleteList, addTask, 
     }
 
     function handleDeleteList() {
-        deleteList(list.id);
-        setShowPopUp(false);
-        handleTask();
+        deleteList(list.id)
+            .then(
+                setShowPopUp(false),
+                handleTask()
+            )
     }
 
     function handleAddTask() {
@@ -62,7 +64,7 @@ const ListItem = ({ list, tasks, updateList, handleDelete, deleteList, addTask, 
             : ""}
             {showTasks ?
                 tasks.map(((task, idx) => {
-                    return <TaskItem task={task} key={idx} updateTask={updateTask} handleAddTask={handleAddTask} />
+                    return <TaskItem task={task} key={idx} updateTask={updateTask} deleteTask={deleteTask} handleAddTask={handleAddTask} />
                 }))
             : ""}
             {showPopUp ?

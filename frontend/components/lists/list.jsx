@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ListItem from './list_item';
 
-const List = ({ lists, fetchEveryList, addList, updateList, deleteList, addTask, updateTask }) => {
+const List = ({ lists, fetchEveryList, addList, updateList, deleteList, addTask, updateTask, deleteTask }) => {
     const [input, setInput] = useState('');
 
     useEffect(() => {
@@ -51,6 +51,7 @@ const List = ({ lists, fetchEveryList, addList, updateList, deleteList, addTask,
                         deleteList={deleteList}
                         addTask={addTask}
                         updateTask={updateTask}
+                        deleteTask={deleteTask}
                         handleTask={handleTask}
                         />
                 })
