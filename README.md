@@ -1,24 +1,27 @@
-# README
+# Todos List
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Todos List is a full stack app with CRUD functionality for Lists, Tasks, and Comments. It was created using React/Redux on the frontend with SASS styling, Ruby (v 2.5.1) on Rails (v 5.2.4) on the backend, and a PostgreSQL database.
 
-Things you may want to cover:
+## To run locally
 
-* Ruby version
+Git clone the repo to download the project locally.
 
-* System dependencies
+To install, run these commands in the terminal:
 
-* Configuration
+* bundle install
+* npm install
+* rails db:create
+* rails db:seed
 
-* Database creation
+To run on a server, run these two commands simultaneously in the terminal:
 
-* Database initialization
+* rails s
+* npm start
 
-* How to run the test suite
+Todos List has two mains views. Below is the first view, the List Index.
 
-* Services (job queues, cache servers, search engines, etc.)
+![Todos Lists](https://github.com/joshkohane/TodosList/blob/master/app/assets/images/Todos%20Lists.png)
 
-* Deployment instructions
+The second view is the Task show page. Each task has comments associated that can be added, edited or deleted on the task show page.
 
-* ...
+![Todos Tasks](https://github.com/joshkohane/TodosList/blob/master/app/assets/images/Todos%20Tasks.png)
