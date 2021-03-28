@@ -10,8 +10,7 @@ To install, run these commands in the terminal:
 
 * bundle install
 * npm install
-* rails db:create
-* rails db:seed
+* rails db:setup
 
 To run on a server, run these two commands simultaneously in the terminal:
 
