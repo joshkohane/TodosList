@@ -7,7 +7,6 @@ const NewTask = ({ addTask, listId, handleAddTask }) => {
 
     function handleCreate(e) {
         e.preventDefault();
-        console.log(description.length)
         if (title.length < 3 || description.length < 3) {
             setError('Title and Description must be longer than 3 characters');
         } else {

@@ -34,4 +34,8 @@
     width: 74%;
     font-family: $serif;
     font-size: 12px;
+
+    &:focus-within {
+        background-color: white;
+    }
 }
