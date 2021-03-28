@@ -1,2 +1,70 @@
 @import "base/colors.scss";
 @import "base/fonts.scss";
+
+.comments-wrapper {
+    height: 500px;
+    max-height: 520px;
+    max-width: 500px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-radius: 5px;
+    background-image: repeating-linear-gradient(0deg, $off-white, $off-white 20px, $green 2px, $green 21px);
+}
+
+.comments-container {
+    position: relative;
+
+    .update-button {
+        top: 1px;
+        right: 10px;
+        color: $green;
+        cursor: pointer;
+
+        &:hover {
+            color: $off-black;
+        }
+    }
+
+    .delete-list-button {
+        top: 0px;
+        right: 27px;
+        color: $green;
+        cursor: pointer;
+
+        &:hover {
+            color: $off-black;
+        }
+    }
+}
+
+.comment-item-wrapper,
+.edit-comment-form {
+    width: 100%;
+    padding: 0 10px;
+}
+
+.comment-text,
+.edit-comment-input {
+    color: $off-black;
+    font-family: $serif;
+    font-size: 12px;
+    line-height: 21px;
+}
+
+.edit-comment-input {
+    padding-left: 20px;
+    width: 80%;
+}
+
+.update-comment {
+    padding-bottom: 2px;
+    color: $green;
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+    top: 1px;
+
+    &:hover {
+        color: $off-black;
+    }
+}

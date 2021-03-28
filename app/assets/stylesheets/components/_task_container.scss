@@ -6,6 +6,7 @@
     width: 500px;
     height: 600px;
     background-color: $off-white;
+    border-radius: 5px;
 }
 
 .task-header-wrapper {
@@ -67,7 +68,8 @@
     position: absolute;
     color: $green;
     right: 10px;
-
+    cursor: pointer;
+    
     &:hover {
         color: $off-black;
     }
@@ -123,11 +125,4 @@
 
 .update-task-description {
     top: 4px;
-}
-
-.comments-container {
-    height: 500px;
-    max-height: 520px;
-    overflow: scroll;
-    background-image: repeating-linear-gradient(0deg, $off-white, $off-white 20px, $green 2px, $green 21px);
 }

@@ -3,7 +3,7 @@ import TaskHeader from './task_header';
 import NewComment from './new_comment';
 import Comments from './comments';
 
-const Task = ({ task, ownProps, fetchOneTask, updateTask, addComment }) => {
+const Task = ({ task, ownProps, fetchOneTask, updateTask, addComment, updateComment, deleteComment, clearTasks }) => {
     useEffect(() => {
         fetchOneTask(parseInt(ownProps.match.params.taskId));
     }, [ownProps])
@@ -22,13 +22,18 @@ const Task = ({ task, ownProps, fetchOneTask, updateTask, addComment }) => {
                     <div className="new-comment-container">
                         <NewComment addComment={addComment} task={task[0]} update={update}/>
                     </div>
-                    <div className="comments-container">
+                    <div className="comments-wrapper">
                         {task[0].comments ? 
                             Object.values(task[0].comments).map((comment, idx) => {
-                                return <Comments comment={comment} key={idx} />
+                                return <Comments comment={comment} 
+                                            key={idx} 
+                                            update={update}
+                                            updateComment={updateComment}
+                                            deleteComment={deleteComment}
+                                            />
                             })
                         : 
-                            <h1>Add Some Comments!</h1>
+                            ''
                         }
                     </div>
                 </div>
