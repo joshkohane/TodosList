@@ -3,7 +3,7 @@ import TaskHeader from './task_header';
 import NewComment from './new_comment';
 import Comments from './comments';
 
-const Task = ({ task, ownProps, fetchOneTask, updateTask, addComment, updateComment, deleteComment, clearTasks }) => {
+const Task = ({ task, ownProps, fetchOneTask, updateTask, addComment, updateComment, deleteComment }) => {
     useEffect(() => {
         fetchOneTask(parseInt(ownProps.match.params.taskId));
     }, [ownProps])

@@ -2,7 +2,6 @@ import { fetchTask, addTask, updateTask, deleteTask } from '../util/task_util';
 
 export const RECEIVE_TASK = 'RECEIVE_TASK';
 export const DELETE_TASK = 'DELETE_TASK';
-export const CLEAR_TASKS = 'CLEAR_TASKS';
 
 export const receiveTask = (task) => ({
     type: RECEIVE_TASK,
@@ -12,10 +11,6 @@ export const receiveTask = (task) => ({
 export const deleteATask = (task) => ({
     type: DELETE_TASK,
     task
-})
-
-export const clearTasks = () => ({
-    type: CLEAR_TASKS,
 })
 
 export const fetchOneTask = (taskId) => dispatch => fetchTask(taskId)

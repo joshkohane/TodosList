@@ -16,11 +16,6 @@ const List = ({ lists, fetchEveryList, addList, updateList, deleteList, addTask,
         }
     }
 
-    // function handleDelete(idx) {
-    //     deleteList(idx);
-    //     handleTask();
-    // }
-
     function handleTask() {
         setTimeout(() => fetchEveryList(), 50)
     }
@@ -47,7 +42,6 @@ const List = ({ lists, fetchEveryList, addList, updateList, deleteList, addTask,
                         tasks={list.tasks ? Object.values(list.tasks) : []} 
                         key={idx} 
                         updateList={updateList}
-                        // handleDelete={handleDelete}
                         deleteList={deleteList}
                         addTask={addTask}
                         updateTask={updateTask}

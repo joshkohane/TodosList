@@ -1,4 +1,4 @@
-import { RECEIVE_TASK, DELETE_TASK, CLEAR_TASKS } from '../actions/task_actions';
+import { RECEIVE_TASK, DELETE_TASK } from '../actions/task_actions';
 import { RECEIVE_ALL_LISTS } from '../actions/list_actions';
 
 export default (oldState = {}, action) => {
@@ -12,12 +12,6 @@ export default (oldState = {}, action) => {
             delete newState[action.task.task]
             return newState;
         case RECEIVE_ALL_LISTS:
-            // if (action.list.tasks) {
-            //     return action.list.tasks;
-            // } else {
-                return {};
-            // }
-        case CLEAR_TASKS:
             return {};
         default:
             return oldState;
