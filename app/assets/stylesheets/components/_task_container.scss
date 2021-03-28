@@ -92,11 +92,12 @@
     width: 95%;
     color: $off-black;
     border-bottom: 1px solid $off-black;
+    background-color: white;
 }
 
 .edit-task-textarea {
     box-sizing: border-box;
-    padding-top: 1px;
+    padding-top: 4px;
     padding-right: 18px;
     font-family: $sans-serif;
     font-size: 16px;
@@ -104,14 +105,14 @@
     resize: none;
     outline: none;
     width: 96%;
-    background-color: $off-white;
+    background-color: white;
 }
 
 .update-task-title-button,
 .update-task-description {
     color: $green;
     position: absolute;
-    right: 22px;
+    right: 26px;
 
     &:hover {
         color: $off-black;
