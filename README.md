@@ -8,7 +8,7 @@ Git clone the repo to download the project locally.
 
 To install, run these commands in the terminal:
 
-* bundle install
+* bundle install (try deleting Gemfile.lock if you run into any issues)
 * npm install
 * rails db:setup
 
